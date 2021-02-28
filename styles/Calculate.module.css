@@ -6,6 +6,10 @@
   padding: 2rem;
 }
 
+.loader {
+  height: 100px;
+}
+
 .calculate__form,
 .calculate__output {
   flex: 0.5;
