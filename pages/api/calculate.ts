@@ -8,11 +8,12 @@ export default (req,res) => {
         const employeeCount = req.body.employeeCount
         // calculate new cost
         const newEmberCost = baseEmberCost + (employeeCount * 4)
-        const savings = currentClientCost - newEmberCost
+        let savings: number|string = (currentClientCost - newEmberCost) * 12
         // return results
         if(newEmberCost > currentClientCost){
             res.status(200).json({savings: 0})
         } else{
+            savings = savings.toFixed(2)
             res.status(200).json({savings})
         }
     } else {
