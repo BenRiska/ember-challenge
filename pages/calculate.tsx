@@ -15,7 +15,7 @@ const Calculate: React.FC = () => {
        e.preventDefault()
        const result = await fetch("https://ember-challenge.vercel.app/api/calculate", {
         method: "POST",
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
           },
