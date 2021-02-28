@@ -1,6 +1,5 @@
 // api route to calculate potential savings
 export default (req,res) => {
-    console.log(req.body)
     // check req params are correct
     if(req.body.currentCost && req.body.employeeCount){
         // instantiate values

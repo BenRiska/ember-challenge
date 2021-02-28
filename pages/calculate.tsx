@@ -3,14 +3,19 @@ import styles from "../styles/Calculate.module.css"
 
 const Calculate: React.FC = () => {
 
+    // holds api return value
     const [savings, setSavings] = useState<boolean|number>(false)
+    // conditional value to display result when data is fetched
     const [showResult, setShowResult] = useState<boolean>(false)
+    // holds form data
     const [formData, setFormData] = useState({currentCost: 0, employeeCount: 0})
 
+    // sets form data
     const setFormValue = (e) => {
         setFormData(prev => ({...prev, [e.target.name]: e.target.value}))
     }
 
+    // fetches savings data
     const fetchSavings = async (e) => {
        e.preventDefault()
        const result = await fetch("https://ember-challenge.vercel.app/api/calculate", {
