@@ -1,5 +1,6 @@
 import {useState} from "react"
 import styles from "../styles/Calculate.module.css"
+import Head from 'next/head'
 
 const Calculate: React.FC = () => {
 
@@ -15,9 +16,11 @@ const Calculate: React.FC = () => {
         setFormData(prev => ({...prev, [e.target.name]: e.target.value}))
     }
 
-    // fetches savings data
+    // fetches data from api
     const fetchSavings = async (e) => {
+       // prevent form refresh
        e.preventDefault()
+       // fetch data
        const result = await fetch("https://ember-challenge.vercel.app/api/calculate", {
         method: "POST",
         headers: {
@@ -25,6 +28,7 @@ const Calculate: React.FC = () => {
           },
         body: JSON.stringify(formData)
        }).then(res => res.json())
+       // set data, show result and clear form fields
        setSavings(result.savings)
        setShowResult(true)
        setFormData({currentCost: 0, employeeCount: 0})
@@ -32,6 +36,10 @@ const Calculate: React.FC = () => {
 
     return (
         <div className={styles.calculate}>
+            <Head>
+                <title>Ember.co - Calculator</title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <div className={styles.calculate__form}>
                 <form>
                     <h1>Savings calculator</h1>
