@@ -159,5 +159,7 @@
 
   .home__image {
     margin-top: 1rem;
+    bottom: initial;
+    right: initial;
   }
 }
