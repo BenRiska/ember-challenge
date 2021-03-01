@@ -161,5 +161,6 @@
     margin-top: 1rem;
     bottom: initial;
     right: initial;
+    max-height: 100%;
   }
 }
