@@ -72,7 +72,12 @@ const Calculate: React.FC = () => {
                 </form>
             </div>
             <div className={styles.calculate__output}>
-                {loader && <img className={styles.loader} src="./loader.gif" alt="Loading animation."/>}
+                {loader && <div className={styles.spinner}>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>}
                 {showResult && (
                     <>
                     <p className={styles.calculate__text}>You'll save</p>
