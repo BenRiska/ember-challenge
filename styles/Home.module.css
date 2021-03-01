@@ -123,6 +123,8 @@
   .home__image {
     display: grid;
     place-items: center;
+    justify-content: initial;
+    align-items: initial;
     padding: 1rem;
     margin-top: 3rem;
   }
@@ -159,6 +161,9 @@
 
   .home__image {
     margin-top: 1rem;
+  }
+
+  .home__image > img {
     bottom: initial;
     right: initial;
     max-height: 100%;
