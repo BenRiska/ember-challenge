@@ -44,6 +44,7 @@
   color: #7d549d;
   cursor: pointer;
   width: 350px;
+  background-color: #fff;
 }
 
 .home__action_btn > img {
@@ -154,5 +155,9 @@
 
   .home__action_btn > img {
     width: 20px;
+  }
+
+  .home__image {
+    margin-top: 1rem;
   }
 }

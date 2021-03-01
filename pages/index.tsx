@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from "next/link"
 import styles from '../styles/Home.module.css'
 
 const Home: React.FC = () => {
@@ -14,10 +15,12 @@ const Home: React.FC = () => {
             <span>Invoices that get</span>
             <span>you paid on time.</span>
           </h1>
-          <button className={styles.home__action_btn}>
-            Send better invoices now 
-            <img src="./button-arrow.svg" alt="Arrow icon."/>
-          </button>
+          <Link href="/calculate">
+            <a className={styles.home__action_btn}>
+              Send better invoices now 
+              <img src="./button-arrow.svg" alt="Arrow icon."/>
+            </a>
+          </Link>
         </div>
       </div>
       <div className={styles.home__image}>
